@@ -4,6 +4,8 @@
 #include "Scene.hpp"
 #include "Input.hpp"
 #include "WorkingDirectory.hpp"
+#include "Object.hpp"
+#include "C_Sprite.hpp"
 
 class SceneGame : public Scene {
 public:
@@ -17,8 +19,7 @@ public:
 	void Draw(Window& window) override;
 
 private:
-	sf::Texture vikingTexture;
-	sf::Sprite vikingSprite;
+	std::shared_ptr<Object> player;
 
 	WorkingDirectory& workingDir;
 	Input input;
