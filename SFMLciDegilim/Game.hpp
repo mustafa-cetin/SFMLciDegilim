@@ -4,6 +4,9 @@
 #include "Window.hpp"
 #include "WorkingDirectory.hpp"
 #include "Input.hpp"
+#include "SceneStateMachine.hpp"
+#include "SceneGame.hpp"
+#include "SceneSplashScreen.hpp"
 
 class Game
 {
@@ -19,12 +22,11 @@ public:
 private:
 	sf::Clock clock;
 	float deltaTime;
+
 	Window window;
 	WorkingDirectory workingDir;
-	Input input;
 
-	sf::Texture vikingTexture;
-	sf::Sprite vikingSprite;
+	SceneStateMachine sceneStateMachine;
 };
 
 #endif // !Game_hpp
