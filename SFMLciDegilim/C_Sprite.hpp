@@ -10,6 +10,7 @@ public:
 
 	void Load(const std::string& path);
 
+	void LateUpdate(float deltaTime) override;
 	void Draw(Window& window) override;
 private:
 	sf::Texture texture;

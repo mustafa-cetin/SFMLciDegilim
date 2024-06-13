@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game() : window("that game engine")
+Game::Game() : window("Hexa Engine")
 {
 	std::shared_ptr<SceneSplashScreen> splashScreen = std::make_shared<SceneSplashScreen>(workingDir, sceneStateMachine, window);
 

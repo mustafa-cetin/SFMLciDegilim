@@ -5,7 +5,6 @@
 
 class Object;
 
-
 class Component {
 public:
 	Component(Object* owner): owner(owner){}

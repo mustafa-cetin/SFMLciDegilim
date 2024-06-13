@@ -4,11 +4,12 @@
 #include "Window.hpp"
 #include <vector>
 #include "Component.hpp"
+#include "C_Transform.hpp"
 
 class Object
 {
 public:
-
+	Object();
 
 	void Awake();
 
@@ -51,6 +52,8 @@ public:
 		return nullptr;
 	};
 
+
+	std::shared_ptr<C_Transform> transform;
 private:
 	std::vector<std::shared_ptr<Component>> components;
 };
