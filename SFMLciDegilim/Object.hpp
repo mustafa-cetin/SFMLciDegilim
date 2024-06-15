@@ -53,9 +53,15 @@ public:
 	};
 
 
+	bool IsQueuedForRemoval();
+	void QueueForRemoval();
+
+
 	std::shared_ptr<C_Transform> transform;
 private:
 	std::vector<std::shared_ptr<Component>> components;
+
+	bool queuedForRemoval;
 };
 
 

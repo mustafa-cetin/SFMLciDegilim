@@ -1,8 +1,16 @@
 #include "Object.hpp"
 
-Object::Object()
+Object::Object() : queuedForRemoval(false)
 {
 	transform = AddComponent<C_Transform>();
+}
+void Object::QueueForRemoval()
+{
+	queuedForRemoval = true;
+}
+bool Object::IsQueuedForRemoval()
+{
+	return queuedForRemoval;
 }
 
 void Object::Awake() {

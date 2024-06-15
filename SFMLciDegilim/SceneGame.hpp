@@ -7,6 +7,7 @@
 #include "Object.hpp"
 #include "C_Sprite.hpp"
 #include "C_KeyboardMovement.hpp"
+#include "ObjectCollection.hpp"
 
 class SceneGame : public Scene {
 public:
@@ -21,7 +22,7 @@ public:
 	void Draw(Window& window) override;
 
 private:
-	std::shared_ptr<Object> player;
+	ObjectCollection objects;
 
 	WorkingDirectory& workingDir;
 	ResourceAllocator<sf::Texture>& textureAllocator;
