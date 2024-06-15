@@ -10,7 +10,7 @@
 
 class SceneGame : public Scene {
 public:
-	SceneGame(WorkingDirectory& workingDir);
+	SceneGame(WorkingDirectory& workingDir,ResourceAllocator<sf::Texture>& textureAllocator);
 
 	void OnCreate() override;
 	void OnDestroy() override;
@@ -24,6 +24,7 @@ private:
 	std::shared_ptr<Object> player;
 
 	WorkingDirectory& workingDir;
+	ResourceAllocator<sf::Texture>& textureAllocator;
 	Input input;
 };
 

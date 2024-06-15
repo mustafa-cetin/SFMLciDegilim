@@ -25,6 +25,7 @@ private:
 
 	Window window;
 	WorkingDirectory workingDir;
+	ResourceAllocator<sf::Texture> textureAllocator;
 
 	SceneStateMachine sceneStateMachine;
 };

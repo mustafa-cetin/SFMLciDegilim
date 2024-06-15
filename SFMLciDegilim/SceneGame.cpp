@@ -1,6 +1,6 @@
 #include "SceneGame.hpp"
 
-SceneGame::SceneGame(WorkingDirectory& workingDir) : workingDir(workingDir)
+SceneGame::SceneGame(WorkingDirectory& workingDir, ResourceAllocator<sf::Texture>& textureAllocator) : workingDir(workingDir), textureAllocator(textureAllocator)
 {
 
 }
@@ -11,6 +11,7 @@ void SceneGame::OnCreate()
 
 
 	auto sprite = player->AddComponent<C_Sprite>();
+	sprite->SetTextureAllocator(&textureAllocator);
 	sprite->Load(workingDir.Get() + "attack_0.png");
 
 	auto movement = player->AddComponent<C_KeyboardMovement>();
