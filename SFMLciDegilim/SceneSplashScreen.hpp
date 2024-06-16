@@ -21,7 +21,6 @@ public:
 	void Update(float deltaTime) override;
 	void Draw(Window& window) override;
 private:
-	//sf::Texture splashTexture;
 	sf::Sprite splashSprite;
 
 	WorkingDirectory& workingDir;

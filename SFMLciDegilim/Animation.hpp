@@ -12,11 +12,17 @@ struct FrameData
 	int height;
 	float displayTimeSeconds;
 };
+enum class FacingDirection
+{
+	None,
+	Left,
+	Right
+};
 
 class Animation
 {
 public:
-	Animation();
+	Animation(FacingDirection direction);
 
 	void AddFrame(int textureId, int x, int y, int width, int height, float frameTime);
 
@@ -25,6 +31,9 @@ public:
 	bool UpdateFrame(float deltaTime);
 
 	void Reset();
+
+	void SetFacingDirection(FacingDirection dir);
+	FacingDirection GetDirection() const;
 private:
 	void IncrementFrame();
 	
@@ -33,6 +42,8 @@ private:
 	int currentFrameIndex;
 
 	float currentFrameTime;
+
+	FacingDirection direction;
 };
 
 

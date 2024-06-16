@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Bitmask.cpp" />
+    <ClCompile Include="C_Animation.cpp" />
     <ClCompile Include="C_KeyboardMovement.cpp" />
     <ClCompile Include="C_Sprite.cpp" />
     <ClCompile Include="C_Transform.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Animation.hpp" />
     <ClInclude Include="Bitmask.hpp" />
     <ClInclude Include="Component.hpp" />
+    <ClInclude Include="C_Animation.hpp" />
     <ClInclude Include="C_KeyboardMovement.hpp" />
     <ClInclude Include="C_Sprite.hpp" />
     <ClInclude Include="C_Transform.hpp" />
@@ -173,6 +175,9 @@
     <ClInclude Include="SceneStateMachine.hpp" />
     <ClInclude Include="Window.hpp" />
     <ClInclude Include="WorkingDirectory.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\hexapawa\Desktop\goldenboy.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

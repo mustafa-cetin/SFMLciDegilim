@@ -1,6 +1,6 @@
 #include "Animation.hpp"
 
-Animation::Animation() : frames(0), currentFrameIndex(0), currentFrameTime(0)
+Animation::Animation(FacingDirection direction) : frames(0), currentFrameIndex(0), currentFrameTime(0), direction(direction)
 {
 
 }
@@ -28,5 +28,42 @@ const FrameData* Animation::GetCurrentFrame() const
 
 bool Animation::UpdateFrame(float deltaTime)
 {
+	if (frames.size()>0)
+	{
+		currentFrameTime += deltaTime;
+		if (currentFrameTime>=frames[currentFrameIndex].displayTimeSeconds)
+		{
+			currentFrameTime = 0;
+			IncrementFrame();
+			return true;
+		}
+	}
+	return false;
+}
 
+void Animation::IncrementFrame()
+{
+	currentFrameIndex = (currentFrameIndex + 1) % frames.size();
+}
+
+void Animation::Reset()
+{
+	currentFrameIndex = 0;
+	currentFrameTime = 0.f;
+}
+void Animation::SetFacingDirection(FacingDirection dir)
+{
+	if (direction!=dir)
+	{
+		direction = dir;
+		for (auto& f : frames)
+		{
+			f.x += f.width;
+			f.width *= -1;
+		}
+	}
+}
+FacingDirection Animation::GetDirection() const
+{
+	return direction;
 }
